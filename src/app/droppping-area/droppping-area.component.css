@@ -1,0 +1,122 @@
+
+
+
+
+.whitebox {
+    position: relative;
+    background: white;
+    width: 304px;
+    height: 127px;
+    border-radius: 29px;
+    padding: 30px;
+}
+
+
+
+.lineAfter.bentCase {
+    height: 128px !important;
+}
+
+.lineAfter {
+    height: 80px;
+    width: 5px;
+    background-color: #838383;
+    position: absolute;
+    left: 40px;
+    top: 100%;
+}
+
+
+.containerHeight.containerOfSplit {
+    height: 255px !important;
+}
+
+.containerHeight {
+    height: 207px;
+    display: flex;
+}
+
+.plusSign {
+    height: 15px;
+    display: block;
+    width: 15px;
+    background: #004eff;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-line .plusSign {
+    left: 103% !important;
+}
+
+
+.vertical-line .hoverReady {
+    left: 103% !important;
+} 
+
+
+.hoverReady {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+    height: 25px;
+    width: 100px;
+    background-color: rgba(170, 170, 170, 0.308);
+    border-radius: 20px;
+
+}
+
+
+.plusSign::after {
+    content: '+';
+    content: '+';
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 28px;
+}
+
+
+/* bent line for split */
+
+
+.bent-line-container {
+    position: relative;
+    top: 100%;
+}
+
+.bent-line {
+    position: absolute;
+    left: 80%;
+    bottom: 2px;
+    border-left: 5px solid #838383;
+    border-bottom: 5px solid #838383;
+    border-bottom-left-radius: 60px;
+    height: 48px;
+    width: 234px;
+}
+
+
+.vertical-line {
+    position: absolute;
+    top: -7px;
+    left: calc(80% + 234px);
+    width: 57px;
+    height: 85px;
+    border-top: 5px solid #838383;
+    border-right: 5px solid #838383;
+    border-top-right-radius: 60px;
+  }
+  
+
+
