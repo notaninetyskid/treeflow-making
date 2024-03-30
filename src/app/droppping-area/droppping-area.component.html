@@ -1,9 +1,8 @@
     <div 
         (mouseup)="onMouseUp($event, i)"
         
-        (dragStart)="onDragStart($event, data)" 
         (dragMove)="onDragMove($event, data)"
-        (dragEnd)="onDragEnd($event, data)"    
+            
         *ngFor="let data of treeArray; let i = index; let isLast = last">
         
        <ng-container *ngIf="data?.type != 'split'">

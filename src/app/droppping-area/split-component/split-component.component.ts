@@ -19,10 +19,10 @@ export class SplitComponentComponent implements OnInit {
   @Input() treeArray: itemsToDrrop[] = []
 
   @Input() data: any;
-  @Input() DragStart?: boolean;
+  @Input() DragStart: boolean = false;
 
 
-  @Output() dataChangedInSplit: EventEmitter<itemsToDrrop[]> = new EventEmitter<itemsToDrrop[]>();
+  @Output() dataChangedInSplit: EventEmitter<any> = new EventEmitter<any>();
 
 
   @HostListener('document:mouseup', ['$event'])
@@ -79,7 +79,6 @@ this.DragStart = true
 
   onMouseUp(e: any, data: itemsToDrrop, where: string) {
 
-
     console.log(this.DragStart)
     if (this.DragStart) {
 
@@ -91,12 +90,12 @@ this.DragStart = true
 
         this.dataYes.push(this.dataToAdd)
 
-        data.yes?.push(this.dataToAdd)
+        // data.yes?.push(this.dataToAdd)
       } else {
 
         this.dataNo.push(this.dataToAdd)
 
-        data.no?.push(this.dataToAdd)
+        // data.no?.push(this.dataToAdd)
       }
 
       // this.newTreeArrayOfYes = (data.yes as itemsToDrrop[])
