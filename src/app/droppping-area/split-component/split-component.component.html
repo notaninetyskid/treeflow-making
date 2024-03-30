@@ -8,7 +8,7 @@
         <span class="plusSign" 
         (mouseleave)="onMouseleave($event)" 
         (mouseover)="onHover($event, data)"
-        (mouseup)="onMouseUp(data, 'yes')" [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne }" *ngIf="DragStart"></span>
+        (mouseup)="onMouseUp($event, data, 'yes')" [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne }" *ngIf="DragStart"></span>
         
     </div>    
     
@@ -19,7 +19,7 @@
             <span class="plusSign " 
         (mouseleave)="onMouseleave($event)" 
         (mouseover)="onHover($event, data)" 
-        (mouseup)="onMouseUp(data, 'no')"
+        (mouseup)="onMouseUp($event, data, 'no')"
         [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}" *ngIf="DragStart"></span>
 
         <!-- <div class="basicDropChild containerHeight" 
@@ -32,7 +32,7 @@
             <app-droppping-area [treeArray]="data.no"></app-droppping-area>
         </div>
 
-</div>
+        </div>
     </div>
 
   </div>
@@ -47,5 +47,5 @@
     
     </div> -->
     <div class="pllantedOne">
-        <app-droppping-area [treeArray]="data.yes"></app-droppping-area>
+        <app-droppping-area [treeArray]="data.yes" ></app-droppping-area>
     </div>

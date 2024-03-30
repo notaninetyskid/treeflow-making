@@ -10,7 +10,20 @@ import { itemsToDrrop } from '../models/droppedItemModel';
 export class DropppingAreaComponent implements OnInit {
   
 
+  
+  
+  // @Input() treeArray: itemsToDrrop[] = [
+  //   {
+  //     id: '4',
+  //     name: 'email',
+  //     type: 'name',
+  //     description: 'google is the best browser',
+  //     dragging: false
+  //   },
+  // ]
+
   @Input() treeArray: itemsToDrrop[] = [
+
     {
       id: '4',
       name: 'email',
@@ -18,9 +31,152 @@ export class DropppingAreaComponent implements OnInit {
       description: 'google is the best browser',
       dragging: false
     },
-    
-  ]
+    {
+      id: '4',
+      name: 'split',
+      type: 'split',
+      yes: [],
+      no: [
+        {
+          id: '4',
+          name: 'email',
+          type: 'name',
+          description: 'google is the best browser',
+          dragging: false
+        },
+        {
+          id: '4',
+          name: 'email',
+          type: 'name',
+          description: 'google is the best browser',
+          dragging: false
+        },
+        {
+          id: '4',
+          name: 'Split',
+          type: 'split',
+          description: 'google is the best browser',
+          yes: [
+            {
+              id: '4',
+              name: 'split',
+              type: 'split',
+              description: 'google is the best browser',
+              dragging: false,
+              yes: [],
+              no: [
+                {
+                  id: '4',
+                  name: 'split',
+                  type: 'split',
+                  yes: [],
+                  no: [
+                    {
+                      id: '4',
+                      name: 'email',
+                      type: 'name',
+                      description: 'google is the best browser',
+                      dragging: false
+                    },
+                    {
+                      id: '4',
+                      name: 'email',
+                      type: 'name',
+                      description: 'google is the best browser',
+                      dragging: false
+                    },
+                    {
+                      id: '4',
+                      name: 'Split',
+                      type: 'split',
+                      description: 'google is the best browser',
+                      yes: [
+                        {
+                          id: '4',
+                          name: 'split',
+                          type: 'split',
+                          description: 'google is the best browser',
+                          dragging: false,
+                          yes: [],
+                          no: [
+                            {
+                              id: '4',
+                              name: 'split',
+                              type: 'split',
+                              yes: [],
+                              no: [
+                                {
+                                  id: '4',
+                                  name: 'email',
+                                  type: 'name',
+                                  description: 'google is the best browser',
+                                  dragging: false
+                                },
+                                {
+                                  id: '4',
+                                  name: 'email',
+                                  type: 'name',
+                                  description: 'google is the best browser',
+                                  dragging: false
+                                },
+                                {
+                                  id: '4',
+                                  name: 'Split',
+                                  type: 'split',
+                                  description: 'google is the best browser',
+                                  yes: [
+                                    {
+                                      id: '4',
+                                      name: 'split',
+                                      type: 'split',
+                                      description: 'google is the best browser',
+                                      dragging: false,
+                                      yes: [],
+                                      no: [ 
+                                        {
+                                          id: '4',
+                                          name: 'email',
+                                          type: 'name',
+                                          description: 'google is the best browser',
+                                          dragging: false
+                                        },
+                                      ]
+                                  }],
+                                  no: [],
+                                  dragging: false
+                                },  
+                              ],
+                              description: 'google is the best browser',
+                              dragging: false
+                            },
+                          ]
+                      }],
+                      no: [],
+                      dragging: false
+                    },  
+                  ],
+                  description: 'google is the best browser',
+                  dragging: false
+                },
+              ]
+          }],
+          no: [
+            {
+              id: '4',
+              name: 'email',
+              type: 'name',
+              description: 'google is the best browser',
+              dragging: false
+            },
+          ],
+          dragging: false
+        },  
+      ],
+      description: 'google is the best browser',
+      dragging: false
+    },
 
+  ]
 
 
 
@@ -107,7 +263,6 @@ export class DropppingAreaComponent implements OnInit {
   dataAddingIntoSplit: boolean = false
 
   dataAddedInSplit(e: any) {
-    debugger
 console.log(e)
     this.dataAddingIntoSplit = true
   }
@@ -119,7 +274,10 @@ console.log(e)
 
 
 
-  onMouseUp(index: number) {
+  onMouseUp(e: any, index: number) {
+
+
+
     console.log(this.DragStart)
     if (this.DragStart) {
 console.log(this.dataAddingIntoSplit)
@@ -137,6 +295,7 @@ console.log(this.dataAddingIntoSplit)
           dragging: this.dataToAdd.dragging,
           // yes: this.treeArray.slice(index + 1), // Set 'yes' to the items after the insertion point
           yes: this.treeArray.slice(index + 1), // Set 'yes' to the items after the insertion point
+          // yes: [], // Set 'yes' to the items after the insertion point
           no: [] // 'no' remains empty for now
         };
 

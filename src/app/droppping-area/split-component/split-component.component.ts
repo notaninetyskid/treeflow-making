@@ -15,10 +15,12 @@ export class SplitComponentComponent implements OnInit {
   @Input() isLast: boolean = false;
   @Input() currentlyHoveredOne: boolean = false;
   @Input() index?: number = 0;
+  
+  @Input() treeArray: itemsToDrrop[] = []
 
   @Input() data: any;
   @Input() DragStart?: boolean;
-  newTransFormedArray: any;
+
 
   @Output() dataChangedInSplit: EventEmitter<itemsToDrrop[]> = new EventEmitter<itemsToDrrop[]>();
 
@@ -34,18 +36,18 @@ export class SplitComponentComponent implements OnInit {
   
   ngOnInit() {
     
-    this.sharedService.dataToDrop.subscribe(res => {
-      console.log(res)
+    // this.sharedService.dataToDrop.subscribe(res => {
+    //   console.log(res)
 
-      this.dataToAdd = res
+    //   this.dataToAdd = res
     
-      // console.log(
-      //   this.index,
-      //   this.DropppingAreaComponent?.treeArray[this.index]
-      //   )
+    //   // console.log(
+    //   //   this.index,
+    //   //   this.DropppingAreaComponent?.treeArray[this.index]
+    //   //   )
         
     
-    })
+    // })
   }
 
   
@@ -71,20 +73,37 @@ this.DragStart = true
 
   @ViewChild(DropppingAreaComponent) DropppingAreaComponent?: DropppingAreaComponent; // Get a reference to the child component
 
-  onMouseUp(data: itemsToDrrop, where: string) {
+  dataYes: itemsToDrrop[] = []
+  dataNo: itemsToDrrop[] = []
+
+
+  onMouseUp(e: any, data: itemsToDrrop, where: string) {
+
 
     console.log(this.DragStart)
     if (this.DragStart) {
 
-      this.DropppingAreaComponent?.dataAddedInSplit(true)
-      where == 'yes'? data.yes?.push(this.dataToAdd) : data.no?.push(this.dataToAdd)
+      // this.DropppingAreaComponent?.dataAddedInSplit(true)
+      // this.DropppingAreaComponent?.onMouseUp(true)
+      // where == 'yes'? data.yes?.push(this.dataToAdd) : data.no?.push(this.dataToAdd)
 
+      if (where == 'yes') {
 
-      // this.dataChangedInSplit.emit(where == 'yes'? data.yes : data.no)
+        this.dataYes.push(this.dataToAdd)
 
+        data.yes?.push(this.dataToAdd)
+      } else {
 
-      console.log(data.yes)
+        this.dataNo.push(this.dataToAdd)
 
+        data.no?.push(this.dataToAdd)
+      }
+
+      // this.newTreeArrayOfYes = (data.yes as itemsToDrrop[])
+      // this.newTreeArrayOfNo = (data.no as itemsToDrrop[])
+
+      console.log(data)
+ 
       this.DragStart = false
       this.currentlyHoveredOne = false
     }

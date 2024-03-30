@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.pllantedOne .outerLayer {
+    height: auto !important;
+    margin-top: 0 !important;
+}
+
+
+
+.outerLayer {
+    margin-top: 30px;
+    height: 529px;
+    overflow: auto;
+}
+
+
+.pllantedOne.basic {
+    position: relative;
+    top: 100%;
+}

@@ -1,5 +1,5 @@
     <div 
-        (mouseup)="onMouseUp(i)"
+        (mouseup)="onMouseUp($event, i)"
         
         (dragStart)="onDragStart($event, data)" 
         (dragMove)="onDragMove($event, data)"
@@ -22,6 +22,7 @@
         [data]="data" 
         [DragStart]="DragStart" 
         [isLast]="isLast" 
+        [dataToAdd]="dataToAdd"
         [currentlyHoveredOne]="currentlyHoveredOne"
         [index]="i"
         (dataChangedInSplit)="dataAddedInSplit($event)"

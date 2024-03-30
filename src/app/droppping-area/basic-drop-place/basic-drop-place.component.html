@@ -1,14 +1,18 @@
 <div class="containerHeight"  >
 
 <div class="whitebox">
-    <p class="text-black">{{data.name}}</p>
-    <p class="text-black">{{data.description}}</p>
-    <div class="lineAfter" *ngIf="!isLast">
+    <p class="text-black">{{data?.name}}</p>
+    <p class="text-black">{{data?.description}}</p>
+    <div class="lineAfter">
         <span class="plusSign" 
         (mouseleave)="onMouseleave($event)" 
         (mouseover)="onHover($event, data)" [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}" *ngIf="DragStart"></span>
     </div>    
   </div>
 </div>
+
+
+
+
 
 
