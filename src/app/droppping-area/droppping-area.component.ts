@@ -239,7 +239,7 @@ export class DropppingAreaComponent implements OnInit {
   
 
   dataAddedInSplit(event: any) {
-    console.log(event)
+    console.log(this.treeArray)
   }
 
 
@@ -252,7 +252,8 @@ export class DropppingAreaComponent implements OnInit {
     //   if (this.dataToAdd.type != 'split') {
         
     //     this.treeArray.splice((index+1), 0, this.dataToAdd)
-    //   } else {
+    //   } 
+    // else {
     //     let newItem: itemsToDrrop = {
     //       id: this.dataToAdd.id,
     //       name: this.dataToAdd.name,
@@ -289,4 +290,8 @@ export class DropppingAreaComponent implements OnInit {
 
 
 
+
+  showData() {
+    console.log(this.treeArray)
+  }
 }

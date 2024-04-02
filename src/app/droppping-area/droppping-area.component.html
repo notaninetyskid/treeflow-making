@@ -1,4 +1,6 @@
-    <div 
+
+
+<div 
         (mouseup)="onMouseUp($event, i)"
         
         (dragMove)="onDragMove($event, data)"
@@ -8,7 +10,9 @@
        <ng-container *ngIf="data?.type != 'split'">
         <app-basic-drop-place 
         [data]="data" 
+        [dataToAdd]="dataToAdd"
         [DragStart]="DragStart" 
+        [index]="i"
         [isLast]="isLast" 
         [currentlyHoveredOne]="currentlyHoveredOne"
         ></app-basic-drop-place>

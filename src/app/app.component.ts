@@ -1,6 +1,7 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ComponentRef, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { sharedService } from './services/sharedServie';
 import { itemsToDrrop } from './models/droppedItemModel';
+import { DropppingAreaComponent } from './droppping-area/droppping-area.component';
 
 
 @Component({
@@ -16,6 +17,9 @@ export class AppComponent {
   constructor(private sharesService: sharedService) {
 
   }
+
+  @ViewChild(DropppingAreaComponent) DropppingAreaComponent?: DropppingAreaComponent; // Get a reference to the child component
+  
 
 
 
@@ -73,7 +77,9 @@ export class AppComponent {
 
 
 
-    
+    showData(){
+console.log(this.DropppingAreaComponent?.treeArray)
+    }
 
 
 

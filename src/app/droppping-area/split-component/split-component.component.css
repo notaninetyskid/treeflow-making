@@ -12,13 +12,13 @@
 }
 
 .containerHeight.containerOfSplit {
-    height: 255px !important;
+    height: 308px !important;
 }
 
 
 
 .lineAfter.bentCase {
-    height: 128px !important;
+    height: 180px !important;
 }
 
 .lineAfter {
@@ -42,7 +42,7 @@
     background: #004eff;
     border-radius: 100%;
     position: absolute;
-    bottom: 20px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
@@ -61,7 +61,7 @@
 
 .hoverReady {
     position: absolute;
-    bottom: 10px;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0;
@@ -94,13 +94,13 @@
 
 .bent-line-container {
     position: relative;
-    top: 100%;
+    top: 83%;
 }
 
 .bent-line {
     position: absolute;
     left: 80%;
-    bottom: 2px;
+    top: 2px;
     border-left: 5px solid #838383;
     border-bottom: 5px solid #838383;
     border-bottom-left-radius: 60px;
@@ -118,11 +118,19 @@
 
 
 .vertical-line {
-    position: absolute;
+    /* position: absolute;
     top: -7px;
     left: calc(80% + 260px);
     width: 57px;
-    height: 85px;
+    height: 255px;
+    border-top: 5px solid #838383;
+    border-right: 5px solid #838383;
+    border-top-right-radius: 60px; */
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 57px;
+    height: 136px;
     border-top: 5px solid #838383;
     border-right: 5px solid #838383;
     border-top-right-radius: 60px;
@@ -133,8 +141,9 @@
     height: 30px;
     width: 30px;
     position: absolute;
-    bottom: 21px;
-    left: -13px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     background-color: black;
     border-radius: 100%;

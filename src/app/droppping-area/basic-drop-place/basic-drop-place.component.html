@@ -6,10 +6,19 @@
     <div class="lineAfter">
         <span class="plusSign" 
         (mouseleave)="onMouseleave($event)" 
-        (mouseover)="onHover($event, data)" [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}" *ngIf="DragStart"></span>
+        (mouseover)="onHover($event, data)" 
+        [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}" *ngIf="DragStart"
+        (mouseup)="onMouseUp()"
+        ></span>
     </div>    
   </div>
 </div>
+<!-- 
+
+<div class="pllantedOne basic">
+  <app-droppping-area></app-droppping-area>
+</div>
+ -->
 
 
 

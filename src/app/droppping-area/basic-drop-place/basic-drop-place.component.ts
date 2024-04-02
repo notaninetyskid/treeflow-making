@@ -10,12 +10,13 @@ export class BasicDropPlaceComponent implements OnInit {
 
 
 
-  @Input() dataToAdd?: itemsToDrrop;
+  @Input() dataToAdd: any;
   @Input() isLast: boolean = false;
   @Input() currentlyHoveredOne: boolean = false;
 
   @Input() data?: itemsToDrrop;
   @Input() DragStart?: boolean;
+  @Input() index: number = 0;
   @Input() treeArray: itemsToDrrop[] = [];
 
   @HostListener('document:mouseup', ['$event'])
@@ -44,5 +45,24 @@ export class BasicDropPlaceComponent implements OnInit {
 
   onMouseleave(e: any) {
     this.currentlyHoveredOne = false
+  }
+
+
+
+  dataYes: itemsToDrrop[] = []
+  dataNo: itemsToDrrop[] = []
+
+
+  onMouseUp() {
+
+    console.log(this.DragStart)
+    if (this.DragStart) {
+
+        this.dataYes.splice(this.index, 0, this.dataToAdd)
+ 
+      this.DragStart = false
+      this.currentlyHoveredOne = false
+    }
+
   }
 }

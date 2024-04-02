@@ -14,10 +14,9 @@ export class SplitComponentComponent implements OnInit {
   @Input() dataToAdd: any;
   @Input() isLast: boolean = false;
   @Input() currentlyHoveredOne: boolean = false;
-  @Input() index?: number = 0;
+  @Input() index: number = 0;
   
   @Input() treeArray: itemsToDrrop[] = []
-
   @Input() data: any;
   @Input() DragStart: boolean = false;
 
@@ -88,20 +87,28 @@ this.DragStart = true
 
       if (where == 'yes') {
 
-        this.dataYes.push(this.dataToAdd)
+        // this.dataYes.push(this.dataToAdd)
+        // this.dataYes.splice(this.index, 0, this.dataToAdd)
+        console.log(this.dataYes)
 
         // data.yes?.push(this.dataToAdd)
+        data.yes?.splice(this.index, 0, this.dataToAdd)
       } else {
 
-        this.dataNo.push(this.dataToAdd)
+        // this.dataNo.push(this.dataToAdd)
+        // this.dataNo.splice(this.index, 0, this.dataToAdd)
+        console.log(this.dataNo)
 
         // data.no?.push(this.dataToAdd)
+        data.no?.splice(this.index, 0, this.dataToAdd)
+
       }
 
       // this.newTreeArrayOfYes = (data.yes as itemsToDrrop[])
       // this.newTreeArrayOfNo = (data.no as itemsToDrrop[])
 
-      console.log(data)
+      this.dataChangedInSplit.emit(true)
+
  
       this.DragStart = false
       this.currentlyHoveredOne = false
