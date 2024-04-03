@@ -1,34 +1,14 @@
 
 
-<div 
-        (mouseup)="onMouseUp($event, i)"
-        
-        (dragMove)="onDragMove($event, data)"
-            
+<!-- <button (click)="showData()">cllick</button> -->
+
+<div (mouseup)="onMouseUp($event, i)" (dragMove)="onDragMove($event, data)"
         *ngFor="let data of treeArray; let i = index; let isLast = last">
-        
-       <ng-container *ngIf="data?.type != 'split'">
-        <app-basic-drop-place 
-        [data]="data" 
-        [dataToAdd]="dataToAdd"
-        [DragStart]="DragStart" 
-        [index]="i"
-        [isLast]="isLast" 
-        [currentlyHoveredOne]="currentlyHoveredOne"
-        ></app-basic-drop-place>
-       </ng-container>
 
-       
 
-       <ng-container *ngIf="data?.type == 'split'">
-        <app-split-component 
-        [data]="data" 
-        [DragStart]="DragStart" 
-        [isLast]="isLast" 
-        [dataToAdd]="dataToAdd"
-        [currentlyHoveredOne]="currentlyHoveredOne"
-        [index]="i"
-        (dataChangedInSplit)="dataAddedInSplit($event)"
-        ></app-split-component>
-       </ng-container>
-    </div>
+        <ng-container>
+                <app-split-component [data]="data" [DragStart]="DragStart"
+                        [currentlyHoveredOne]="currentlyHoveredOne" [index]="i"
+                        (dataChangedInSplit)="dataAddedInSplit($event)"></app-split-component>
+        </ng-container>
+</div>

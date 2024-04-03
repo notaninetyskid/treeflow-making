@@ -10,11 +10,11 @@
 }
 
 li {
-    color: white;
-    font-size: 20px;
     margin: 0 10px;
     cursor: grab;
 }
+
+
 
 .blurred {
     opacity: 0.5;
@@ -34,17 +34,44 @@ li {
 
 .newColoring {
     
-    background: rgb(0 0 0 / 41%);
+    color: #525252;
+    font-weight: 600;
+    background-color: #FEFEFE;
+    cursor: grab;
+    font-size: 14px;
+    width: 195px;
     margin: 10px;
     padding: 12px;
     border-radius: 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 
 .liClass .opacClass {
     position: absolute;
     top: -10px;
-    width: 92%;
 }
+
+
+
+
+.newBg {
+    background-color: #F6F8FC;
+}
+
+.channelClass {
+    margin-left: 20px;
+    line-height: 14px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+
+
+
 
 

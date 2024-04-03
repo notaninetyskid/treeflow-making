@@ -1,42 +1,52 @@
-<div class="containerHeight containerOfSplit"  >
+<div class="containerHeight containerOfSplit">
 
-<div class="whitebox">
-    <p class="text-black">{{data?.name}}</p>
-    <!-- <p class="text-black">{{data?.description}}</p> -->
+    <div class="whitebox">
+        <p class="text-black">{{data?.title}}</p>
+        <!-- <p class="text-black">{{data?.description}}</p> -->
 
-    <div class="lineAfter bentCase"  [ngClass]="{ 'showYes': !currentlyHoveredOne && !DragStart}">
-        <span class="plusSign" 
-        (mouseleave)="onMouseleave($event)" 
-        (mouseover)="onHover($event, data)"
-        (mouseup)="onMouseUp($event, data, 'yes')" [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne }" *ngIf="DragStart"></span>
-        
-    </div>    
-    
+           
 
-    <div class="bent-line-container">
-        <div class="bent-line">
-            <div class="vertical-line "  [ngClass]="{ 'showNo': !currentlyHoveredOne && !DragStart}">
-                <span class="plusSign " 
-            (mouseleave)="onMouseleave($event)" 
-            (mouseover)="onHover($event, data)" 
-            (mouseup)="onMouseUp($event, data, 'no')"
-            [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}" *ngIf="DragStart"></span>
-    
-            <!-- <div class="basicDropChild containerHeight" 
-            *ngFor="let yesObject of data.no; let i = index; let isLast = last">
-    
-                <app-basic-drop-place [data]="data" [isLast]="isLast"></app-basic-drop-place>
-            
-            </div> -->
-            <div class="pllantedOne basic">
-                <app-droppping-area [treeArray]="dataNo"></app-droppping-area>
-            </div>
-    
+
+
+        <div class="bent-line-container">
+            <div class="bent-line">
+                <div class="vertical-line " [ngClass]="{ 'showNo': !currentlyHoveredOne && !DragStart}">
+                    <span class="plusSign " (mouseleave)="onMouseleave($event)" (mouseover)="onHover($event, data)"
+                        (mouseup)="onMouseUp($event, data, 'no')"
+                        [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne}"
+                        *ngIf="DragStart"></span>
+
+                    <div class="pllantedOne basic">
+                        <!-- <app-droppping-area [treeArray]="dataNo"></app-droppping-area> -->
+
+                        <ng-container *ngFor="let item of dataNo; let i = index">
+
+                            <app-split-component *ngIf="item?.type == 'split'" [index]="i" [DragStart]="DragStart"
+                                [currentlyHoveredOne]="currentlyHoveredOne" [data]="item"></app-split-component>
+
+                            <app-basic-drop-place *ngIf="item?.type != 'split'" 
+                            [data]="item" 
+                            [arrayType]="'no'"
+                            [treeArray]="data.no" 
+                            [DragStart]="DragStart"
+                            [currentlyHoveredOne]="currentlyHoveredOne" [index]="i"></app-basic-drop-place>
+
+                        </ng-container>
+
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
 
-  </div>
+    </div>
+    <div class="lineAfter bentCase" [ngClass]="{ 'showYes': !currentlyHoveredOne && !DragStart}">
+        <span class="plusSign" (mouseleave)="onMouseleave($event)" (mouseover)="onHover($event, data)"
+            (mouseup)="onMouseUp($event, data, 'yes')"
+            [ngClass]="{'hoverReady': currentlyHoveredOne, 'plusSign': !currentlyHoveredOne }"
+            *ngIf="DragStart"></span>
+
+    </div>
 
 </div>
 
@@ -47,7 +57,17 @@
         [isLast]="isLast"></app-basic-drop-place>
     
     </div> -->
-    <div class="pllantedOne">
-        <app-droppping-area [treeArray]="dataYes" [DragStart]="DragStart"
-        [currentlyHoveredOne]="currentlyHoveredOne"></app-droppping-area>
-    </div>
+<div class="pllantedOne">
+    <ng-container *ngFor="let item of dataYes; let i = index">
+
+        <app-split-component *ngIf="item?.type == 'split'" [data]="item" [index]="i" [DragStart]="DragStart"
+            [currentlyHoveredOne]="currentlyHoveredOne">
+        </app-split-component>
+        
+
+        <app-basic-drop-place *ngIf="item?.type != 'split'" [data]="item" [treeArray]="data.yes" [index]="i"
+            [DragStart]="DragStart" [currentlyHoveredOne]="currentlyHoveredOne">
+        </app-basic-drop-place>
+
+    </ng-container>
+</div>

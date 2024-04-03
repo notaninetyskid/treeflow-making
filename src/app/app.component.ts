@@ -26,47 +26,100 @@ export class AppComponent {
   items: itemsToDrrop[] = [
     {
       id: '1',
-      name: 'email',
+      title: 'Items in your cart are selling out fast',
+      sidebar: 'EMAIL',
       type: 'email',
-      description: 'new email',
+      description: 'Items in your cart are selling out fast. Get them before they are gone',
       dragging: false
     },
     {
       id: '2',
-      name: 'name',
-      type: 'pI',
-      description: 'new name',
+      title: 'SMS',
+      sidebar: 'SMS',
+      type: 'sms',
+      data: {
+        phNo: 8287340150 ,
+        message: '',
+        aboutMessage: 'Message as recipients will see it '
+      },
+      description: 'new SMS',
       dragging: false
+    },
+    
+    {
+      id: '2',
+      title: 'WHATSAPP',
+      sidebar: 'WHATSAPP',
+      data: {
+        phNo: 8287340150 ,
+        message: '',
+        aboutMessage: 'Message as recipients will see it '
+      },
+      type: 'whatsapp',
+      description: 'new Whatsapp',
+      dragging: false
+    },
+    
+  ];
+
+  flowAction = [
+   
+    
+    {
+      id: '3',
+      title: 'DELAY',
+      sidebar: 'DELAY',
+      type: 'delay',
+      data: {
+        time: '11',
+        completed: '0'
+      },
+      description: 'new delay',
+      dragging: false,
+      yes: [],
+      no: [],
+    },
+
+    {
+      id: '3',
+      title: 'TAG CONTACT/DEAL',
+      sidebar: 'TAG CONTACT/DEAL',
+      type: 'tagContactDeal',
+      description: 'new tagContactDeal',
+      dragging: false,
+      yes: [],
+      no: [],
     },
     {
       id: '3',
-      name: 'split',
+      title: 'SPLIT',
+      sidebar: 'SPLIT',
       type: 'split',
       description: 'new name',
       dragging: false,
       yes: [],
       no: [],
-    }
-  ];
+    },
+  ]
 
 
 
   dragging: boolean = false
 
 
-    onDragStart(e: any, data: {name: string, dragging: boolean}) {
+    onDragStart(e: any, data: {title: string, dragging: boolean}) {
       this.dragging = true
       this.sharesService.dataToDropFunc(data)
       this.sharesService.stuffFunction(this.dragging)
       console.log(data)
     }
 
-    onDragMove(e: any, data: {name: string, dragging: boolean}) {
+    onDragMove(e: any, data: {title: string, dragging: boolean}) {
       data.dragging = true
     }
     
     
-    onDragEnd(e: any, data: {name: string, dragging: boolean}) {
+    onDragEnd(e: any, data: {title: string, dragging: boolean}) {
       
       data.dragging = false;
       this.dragging = false;

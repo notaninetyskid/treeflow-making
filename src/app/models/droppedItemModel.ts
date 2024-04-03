@@ -1,9 +1,11 @@
 export interface itemsToDrrop {
    id: string,
-   name: string,
+   title: string,
    type: string,
    description: string,
    dragging: boolean,
+   data?: {},
+   sidebar?: string,
    yes?: itemsToDrrop[],
    no?: itemsToDrrop[],
 }

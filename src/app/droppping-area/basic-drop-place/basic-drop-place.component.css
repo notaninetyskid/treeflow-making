@@ -1,16 +1,6 @@
 
 
 
-
-.whitebox {
-    position: relative;
-    background: white;
-    width: 304px;
-    height: 127px;
-    border-radius: 29px;
-    padding: 30px;
-}
-
 .containerHeight.containerOfSplit {
     height: 255px !important;
 }
@@ -21,14 +11,14 @@
     height: 128px !important;
 }
 
-.lineAfter {
+/* .lineAfter {
     height: 80px;
     width: 5px;
     background-color: #838383;
     position: absolute;
     left: 40px;
     top: 100%;
-}
+} */
 
 
 .containerHeight {
@@ -58,6 +48,9 @@
     left: 103% !important;
 } 
 
+.dashed-border {
+    border: 1px dashed grey;
+}
 
 .hoverReady {
     position: absolute;
@@ -78,7 +71,6 @@
 }
 
 .plusSign::after {
-    content: '+';
     content: '+';
     position: absolute;
     color: white;
@@ -127,7 +119,6 @@
     height: 255px !important;
 }
 
-.containerHeight {
-    height: 207px;
-    /* display: flex; */
-}
+/* .containerHeight {
+} */
+

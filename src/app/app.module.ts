@@ -6,6 +6,7 @@ import { DirectivesModule } from './directives/directives.module';
 import { DropppingAreaComponent } from './droppping-area/droppping-area.component';
 import { BasicDropPlaceComponent } from './droppping-area/basic-drop-place/basic-drop-place.component';
 import { SplitComponentComponent } from './droppping-area/split-component/split-component.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SplitComponentComponent } from './droppping-area/split-component/split-
   imports: [
     BrowserModule,
     DirectivesModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

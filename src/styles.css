@@ -17,3 +17,307 @@
     position: relative;
     top: 100%;
 }
+
+.basicDetailsPart {
+    padding: 18px 12px;
+}
+
+
+.lineAfter.bentCase {
+    height: 170px !important;
+}
+
+.lineAfter {
+    margin-left: 50px;
+    height: 170px;
+    width: 2px;
+    background-color: rgba(19, 19, 19, 0.4);
+    position: relative;
+}
+
+.containerHeight.containerOfSplit {
+    height: 255px !important;
+}
+
+
+.plusSign {
+    height: 15px;
+    display: block;
+    width: 15px;
+    background: #004eff;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-line .plusSign {
+    left: 103% !important;
+}
+
+
+.vertical-line .hoverReady {
+    left: 103% !important;
+} 
+
+
+.hoverReady {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+    height: 25px;
+    width: 100px;
+    background-color: rgba(170, 170, 170, 0.308);
+    border-radius: 20px;
+
+}
+
+.outerLayer {
+    margin-top: 30px;
+    height: 529px;
+    overflow: auto;
+}
+
+.plusSign::after {
+    content: '+';
+    content: '+';
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 28px;
+}
+
+
+/* bent line for split */
+
+
+/* .bent-line-container {
+    position: relative;
+    top: 100%;
+} */
+
+
+.bent-line {
+    position: absolute;
+    left: 80%;
+    top: 2px;
+    border-left: 2px solid #838383;
+    border-bottom: 2px solid #838383;
+    border-bottom-left-radius: 60px;
+    height: 48px;
+    width: 365px;
+}
+
+
+
+
+.vertical-line {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 57px;
+    height: 85px;
+    border-top: 2px solid #838383;
+    border-right: 2px solid #838383;
+    border-top-right-radius: 60px;
+  }
+  
+
+  
+
+
+  .example-boundary {
+    width: 400px;
+    background: grey;
+    padding: 20px;
+    height: 585px;
+    width: 100%;
+}
+
+li {
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: grab;
+}
+
+.blurred {
+    opacity: 0.5;
+}
+
+.non-selectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+
+.liClass {
+    position: relative;
+}
+
+.newColoring {
+    
+    background: rgb(0 0 0 / 41%);
+    margin: 10px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+
+.liClass .opacClass {
+    position: absolute;
+    top: -10px;
+    width: 92%;
+}
+
+
+
+
+.whitebox {
+    position: relative;
+    background: white;
+    width: 304px;
+    height: 100%;
+    border-radius: 29px;
+}
+
+
+/* .whitebox.email {
+    width: 317px !important;
+    height: 286px !important;
+} */
+.emailHeight {
+    width: 317px !important;
+    height: 286px !important;
+
+}
+
+.smsDataBox {
+    width: 100%;
+    color: rgba(19, 19, 19, 0.4);
+    border: 0;
+    background: rgba(239, 239, 239, 1);
+    font-size: 14px;
+    padding: 17px 21px;
+    border-top-left-radius: 30px;
+}
+
+.text-black-aboutMessage {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(19, 19, 19, 0.7);
+    margin: 16px 0 0 0;
+}
+
+.sms  {
+  width: 301px !important;
+  height: 298px !important 
+} 
+
+
+
+
+
+.firstRow div > p:last-child {
+    margin: 0;
+}
+
+
+.datalinDelay .firstRow div > p {
+    margin: 0;
+}
+
+
+
+.text-black-title {
+    font-size: 14px;
+    color: rgba(19, 19, 19, 0.7);
+    display: flex;
+    margin: 0;
+    font-weight: 800;
+    align-items: center;
+}
+
+
+.delayheightset {
+    height: 67px;
+}
+
+.text-black-decription {
+    color: rgba(19, 19, 19, 0.7);
+    font-size: 14px;
+    font-weight: 300;
+    padding: 12px 0;
+}
+
+
+.datalinEmail {
+    background-color: rgba(245, 245, 245, 1);
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+    padding: 6px 20px;
+    height: 147px;
+}
+
+.datalinDelay {
+
+    background-color: rgba(245, 245, 245, 1);
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+    padding: 6px 20px;
+    height: 63px;
+}
+
+
+.datalinEmail p {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(19, 19, 19, 0.7);
+}
+
+
+
+
+.delayClass {
+    width: 298px !important;
+    height: 132px !important;
+}
+
+.firstRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.border-top-dash {
+    border-top: 1px dashed grey;
+}
+
+
+.buttonHideStats {
+
+}
+
+.filterDrp {
+    margin: 0;
+}
+
+
+.filtParent {
+    display: flex;
+    padding-bottom: 50px;
+    margin-left: 53px;
+    justify-content: space-between;
+    align-items: center;
+}
+

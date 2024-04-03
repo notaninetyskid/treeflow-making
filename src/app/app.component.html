@@ -1,28 +1,79 @@
 <div class="">
-  <div class="row example-boundary">
+  <div class="row example-boundary newBg">
 
     <div class="sidebar col-3">
 
+      <!-- <div class="filtParent">
+        <button class="buttonHideStats">Hide Stats</button>
+        <p class="filterDrp">Last 30 Days</p>
+      </div>
+       -->
       <ul class="listParent" style="list-style: none;" >
-        <li *ngFor="let data of items" class="liClass" [ngClass]="{'blurred': data.dragging}"
-         
+        <p class="channelClass">CHANNELS</p>
+        <li *ngFor="let data of items" class="liClass" [ngClass]="{'blurred': data.dragging}">
+        
+          <div class="non-selectable newColoring" appDraggable appMovable 
+          (dragStart)="onDragStart($event, data)" 
+          (dragMove)="onDragMove($event, data)"
+          (dragEnd)="onDragEnd($event, data)">
+            {{data.sidebar}}
+            <div class="dotsIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="-4 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+</svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="4 0 16 16">
+  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+</svg>
+            </div>
+          </div>
+          <div class="opacClass newColoring" *ngIf="data.dragging">
+            {{data.sidebar}}
+            <div class="dotsIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="-4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg>
+            </div>
+          </div>
+        </li> 
+      </ul>
+
+      <ul class="listParent mt-5" style="list-style: none;" >
+        <p class="channelClass">FLOW ACTION</p>
+        <li *ngFor="let data of flowAction" class="liClass" [ngClass]="{'blurred': data.dragging}"
          >
         
           <div class="non-selectable newColoring" appDraggable appMovable 
           (dragStart)="onDragStart($event, data)" 
           (dragMove)="onDragMove($event, data)"
           (dragEnd)="onDragEnd($event, data)">
-            {{data.name}}
+            {{data.sidebar}}
+            <div class="dotsIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="-4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg>
+            </div>
           </div>
           <div class="opacClass newColoring" *ngIf="data.dragging">
-            {{data.name}}
+            {{data.sidebar}}
+            <div class="dotsIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="-4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="4 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+              </svg>
+            </div>
           </div>
         </li> 
       </ul>
 
+
+
     </div>
 
-    <div class="col-9 bg-dark">
+    <div class="col-9">
       <div class="outerLayer">
 
 

@@ -95,10 +95,10 @@
 /* bent line for split */
 
 
-.bent-line-container {
+/* .bent-line-container {
     position: relative;
     top: 100%;
-}
+} */
 
 .bent-line {
     position: absolute;

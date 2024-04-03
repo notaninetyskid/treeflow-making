@@ -13,16 +13,16 @@ export class DropppingAreaComponent implements OnInit {
   
   
   @Input() treeArray: itemsToDrrop[] = [
-    {
-      id: '4',
-      name: 'email',
-      type: 'name',
-      description: 'google is the best browser',
-      dragging: false
-    },
+    // {
+    //   id: '4',
+    //   name: 'email',
+    //   type: 'name',
+    //   description: 'google is the best browser',
+    //   dragging: false
+    // },
     {
           id: '4',
-          name: 'split',
+          title: 'split',
           type: 'split',
           yes: [],
           no: [],
@@ -33,13 +33,7 @@ export class DropppingAreaComponent implements OnInit {
 
   // @Input() treeArray: itemsToDrrop[] = [
 
-  //   {
-  //     id: '4',
-  //     name: 'email',
-  //     type: 'name',
-  //     description: 'google is the best browser',
-  //     dragging: false
-  //   },
+  
   //   {
   //     id: '4',
   //     name: 'split',
@@ -211,18 +205,18 @@ export class DropppingAreaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sharedService.dataToDrop.subscribe(res => {
-      console.log(res)
+    // this.sharedService.dataToDrop.subscribe(res => {
+    //   console.log(res)
 
-      this.dataToAdd = res
-    })
+    //   this.dataToAdd = res
+    // })
 
     this.sharedService.stuffShared.subscribe((res: any) => {
       this.DragStart = res
       this.currentlyHoveredOne = false
 
       console.log(this.DragStart)
-      console.log(this.treeArray)
+      // console.log(this.treeArray)
     })
 
   }
@@ -233,18 +227,19 @@ export class DropppingAreaComponent implements OnInit {
     this.currentlyHoveredOne = false
   }
 
-  onDragMove(e: any, data: {name: string, dragging: boolean}) {
+  onDragMove(e: any, data: {title: string, dragging: boolean}) {
     data.dragging = true
   }
   
 
   dataAddedInSplit(event: any) {
-    console.log(this.treeArray)
+    // console.log(this.treeArray)
   }
 
 
   onMouseUp(e: any, index: number) {
 
+    // console.log(this.treeArray)
 
     // console.log(this.DragStart)
     // if (this.DragStart) {

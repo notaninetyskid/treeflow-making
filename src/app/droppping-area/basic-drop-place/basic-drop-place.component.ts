@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { itemsToDrrop } from 'src/app/models/droppedItemModel';
+import { sharedService } from 'src/app/services/sharedServie';
 
 @Component({
   selector: 'app-basic-drop-place',
@@ -14,10 +15,15 @@ export class BasicDropPlaceComponent implements OnInit {
   @Input() isLast: boolean = false;
   @Input() currentlyHoveredOne: boolean = false;
 
-  @Input() data?: itemsToDrrop;
-  @Input() DragStart?: boolean;
-  @Input() index: number = 0;
+  @Input() data: any;
+  @Input() DragStart: boolean = true;
   @Input() treeArray: itemsToDrrop[] = [];
+
+
+  @Input() treeyArray: itemsToDrrop[] = []
+  @Input() arrayType: string = ''
+  @Input() index: number = 0
+
 
   @HostListener('document:mouseup', ['$event'])
   makeitFalse(event: MouseEvent) {
@@ -25,9 +31,14 @@ export class BasicDropPlaceComponent implements OnInit {
     this.currentlyHoveredOne = false
   } 
 
-  constructor() { }
+  constructor(private sharedService: sharedService) { }
 
   ngOnInit(): void {
+    this.sharedService.dataToDrop.subscribe(res => {
+      console.log(res)
+
+      this.dataToAdd = res
+    })
   }
 
 
@@ -58,7 +69,11 @@ export class BasicDropPlaceComponent implements OnInit {
     console.log(this.DragStart)
     if (this.DragStart) {
 
-        this.dataYes.splice(this.index, 0, this.dataToAdd)
+
+    
+      this.treeArray.splice((this.index + 1), 0, this.dataToAdd)
+
+
  
       this.DragStart = false
       this.currentlyHoveredOne = false
